@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    background-color: black;
+    color: white;
+    font-size: 32px;
+}
+.red{
+    color: red;
+    margin-right: 83.5%;
+}
+.first{
+    font-family: Gilroy,sans-serif;
+    height: 100vh;
+    background-color: bisque;
+    background-image: url('../../assets/bg1.avif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.first h1{
+    margin-left: 18%;
+    padding-top: 23%;
+    line-height: 1.5;
+}
+.second{
+    font-family: Gilroy,sans-serif;
+    height: 70vh;
+    position: relative;
+    text-align: center;
+}
+.second p{
+    padding: 2%;
+}
+.second h1{
+    font-size: 40px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
