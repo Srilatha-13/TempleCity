@@ -1,3 +1,4 @@
+import { AppHttpService } from './services/app-http.service';
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,18 @@ import { ContactComponent } from './contact/contact.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { InteriorComponent } from './interior/interior.component';
 import { PostComponent } from './post/post.component';
+
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
+import { signinComponent } from './signin/signin.component';
+import { AuthService } from './shared/auth.service';
+import { AngularFireModule } from '@angular/fire/compat';
+import { firebaseConfig } from 'src/environments/environments';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
+// import { AngularFireAuth } from '@angular/fire/compat/auth';
+// import {initializeApp , provideFirebaseApp} from '@angular/fire/app' 
+
 
 const routes: Routes = [
   {
@@ -29,6 +42,15 @@ const routes: Routes = [
   {
     path: 'contact' , component: ContactComponent,
   },
+  {
+    path: 'signin' , component: signinComponent,
+  },
+  {
+    path: 'register' , component: RegisterComponent,
+  },
+  {
+    path: 'forgot-password' , component: ForgotPasswordComponent ,
+  },
   
 ]
 @NgModule({
@@ -39,15 +61,24 @@ const routes: Routes = [
     ContactComponent,
     TestimonialsComponent,
     InteriorComponent,
-    PostComponent
+    PostComponent,
+    RegisterComponent,
+    signinComponent,
+    ForgotPasswordComponent,
+  
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+    AngularFireModule.initializeApp(
+      firebaseConfig
+    )
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+   providers: [AuthService,AppHttpService],
+   bootstrap: [AppComponent],
   
 })
 export class AppModule { }

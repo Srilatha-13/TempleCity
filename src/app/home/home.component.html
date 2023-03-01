@@ -2,6 +2,7 @@
 
 
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 <div class="bg">
 
 <div class="wrapper">
@@ -37,31 +38,107 @@
     
   <!-- Boxes section -->
   <section class="boxes">
-    <div class="box">
-      <a href="/location-advantage">
+    <div (click)="locationfu()" class="box">
+      
       <i class="fas fa-chart-pie fa-4x"></i>
       <h3>Location Advantage</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, officia.</p>
-    </a></div>
-    <div class="box">
-    <a href="/project-overview">
+    </div>
+    <div (click)="projectfu()" class="box">
       <i class="fas fa-globe fa-4x"></i>
       <h3>Project Overview</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, officia.</p>
-    </a></div>
-    <div class="box">
-      <a href="/amenities">
+  </div>
+    <div (click)="amenitiesfu()" class="box">
+      
       <i class="fas fa-cog fa-4x"></i>
       <h3>Amenities</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, officia.</p>
-    </a></div>
-    <div class="box">
-      <a href="/support">
+  </div>
+    <div  (click)="specificationsfu()" class="box">
+    
       <i class="fas fa-users fa-4x"></i>
-      <h3>Support</h3>
+      <h3>Specifications</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, officia.</p>
-    </a></div>
+    </div>
   </section>
+   <!-- location-advanage -->
+
+
+  <section *ngIf="location" class="loc">
+    <img src="https://media.istockphoto.com/id/689905208/photo/network-gps-navigation-modern-city-future-technology.jpg?s=612x612&w=0&k=20&c=NSrbRyBsDAuZQGPViBPTKHke0AX2clJE0PLM2o48XIk=" alt="img">
+    <div  class="loc-adv">
+
+      <h2>Location Advantages</h2>
+      <h3>Schools</h3>
+
+      <ul>
+        <li>Zion International School – 1 km</li>
+        <li>Lydia Matriculation Higher Secondary School-1.5 km</li>
+        <li>GKM Vidhyashram School – 2 km</li>
+        <li>SSM School – 2.5 km</li>
+        <li>Velammal Vidyashram School – 5.5 km</li>
+        <li>Apple Kids International Pre School – 8 km</li>
+        <li>St. John’s Matriculation High School – 8.5 km</li>
+        <li>The Park School –  8.5 km</li>
+      </ul>
+      <h3>Colleges</h3>
+      
+
+      <button class="la-btn" (click)="popup1fu()">All Advantages</button>
+    </div>
+  </section>
+
+<!-- amenities -->
+
+  <section *ngIf="amenities" class="amenities">
+    <img src="https://media.istockphoto.com/id/152060493/photo/indoor-swimming-pool.jpg?s=612x612&w=0&k=20&c=Km-DjH62GyalhhTjLITT_amdVXDf27U_fe3IQYPbRRA=" alt="img">
+    <div  class="amen">
+
+      <h2>Amenities</h2>
+      <h3>Indoor Amenities</h3>
+
+      <ol>
+        <li>Party hall</li>
+        <li>Multi-spots Area</li>
+        <li>AV Room</li>
+        <li>Indoor game zone</li>
+        <li>Indoor kids play</li>
+        <li>Gym</li>
+        <li>Yoga</li>
+        <li>Aerobics</li>
+        <li>Learning Center</li>
+        <li>Association Room</li>
+        <li>Sculpture Cour</li>
+      </ol>
+
+     <button class="btn-1" (click)="popup2fu()">More Amenities</button>
+     </div>
+  </section>
+
+  <!-- specifications -->
+
+
+
+
+  <!-- project-overview -->
+
+  <section *ngIf="project" class="project">
+    <img src="https://media.istockphoto.com/id/1393610514/photo/exterior-of-luxurious-modern-villa-with-swimming-pool-and-garden.jpg?s=612x612&w=0&k=20&c=GJySrcSKjCMhdo51EtRVOOMMWFJb3VsdFO4C1VSiOWU=" alt="img">
+    <div  class="proj">
+
+      <h2>Project Overview</h2>
+      <p>Make your dream of living a life filled with comfort & luxury come true with TempleCity. That too the British way. These elegantly designed British homes are spread across 9.29 acres of land with well designed outdoor spaces, private balconies, world-class amenities & more. The benchmark of luxury living is now close to you.  <br> Come experience it all at Templecity.
+  <br><br>
+        TC No – TN/29/Building/0000/2222  https://www.templecity.tn.gov.in/</p>
+<br><br>
+        <a class="btn-1" href="../contact">Contact Us</a>
+     </div>
+   
+  </section>
+
+  <!-- salient features -->
+  
   <section class="info">
     <img src="../../assets/11.jpg" alt="img">
     <div class="sf">
@@ -76,6 +153,8 @@
       <a class="btn" href="#">Learn More</a>
     </div>
   </section>
+
+ 
   
   <!-- Portfolio -->
   <section class="explore">
@@ -108,3 +187,65 @@
 </div>
 </div>
 <!-- Wrapper End -->
+<section *ngIf="popup" class="popup">
+  <section *ngIf="popup1"  class="p1">
+    <!-- <i class="fa-solid fa-xmark"></i> -->
+    <i class="fas fa-times"></i>
+    <h3>Colleges</h3>
+    <ul>
+      <li>Sri Balaji Arts & Science College – 2.5 km</li>
+      <li>Tagore Engineering College – 4 km</li>
+      <li>Chennai Institute Of Technology - 5 km</li>
+      <li>Vellore Institute of Technology – 7 km</li>
+      <li>Bharath Institute of Arts & Science College -3.5 km</li>
+      <li>Crescent Institute Of Science And Technology – 9 km</li>
+    </ul>
+    <h3>Hospitals</h3>
+    <ul>
+      <li>Annai Theresa Hospital – 2.5 km</li>
+      <li>Tagore Hospital – 4.5 km</li>
+      <li>Bethesda Hospital – 5 km</li>
+      <li>Zeroin Hospital – 7 km</li>
+      <li>Crescent Clinic – 8.5 km</li>
+      <li>Sri Jeyam Hospital – 9 km</li>
+      <li>Hindu Mission Hospital – 9.5 km</li>
+    </ul>
+    <h3>Location Advantages</h3>
+    <ul>
+      <li>Camp Road – 6 km</li>
+      <li>Vandalur – 6.5 km</li>
+      <li>Tambaram – 8 km</li>
+      <li>Chrompet – 10 km</li>
+      <li>Pallavaram -12 km</li>
+      <li>Airport -15 km</li>
+      <li>Perumbakkam -9 km</li>
+      <li>Medavakkam – 10 km</li>
+      <li>Sholinganallur – 14 km</li>
+      <li>Kelambakkam – 16 km</li>
+      <li>OMR -16 km</li>
+    </ul>
+  </section>
+  <section *ngIf="popup2" class="p2">
+    <h3>Outdoor Amenities</h3>
+  <ol>
+      <li>Tot Lot</li>
+      <li>Amphitheatre</li>
+      <li>Senior Citizen Corner</li>
+      <li>Sensory Play Area</li>
+      <li>Kids Play Area</li>
+      <li>Jogging Track</li>
+      <li>Yoga Pavilion</li>
+      <li>Cycling track</li>
+      <li>Cricket Pitch</li>
+      <li>Pet corner</li>
+      <li>Tree House</li>
+      <li>Multipurpose Sports Court</li>
+    
+    <h3>Swimming Pool Amenities</h3>
+    <li>Swimming Pool</li>
+    <li>Kids Pool</li>
+    <li>Poolside Cabanas</li>
+    </ol>
+  </section>
+</section>
+

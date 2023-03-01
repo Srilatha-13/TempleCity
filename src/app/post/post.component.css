@@ -14,7 +14,23 @@
 }
 .red{
     color: red;
-    margin-right: 83.5%;
+    margin-right: 74.5%;
+}
+.reg{
+    height: 5%;
+    background:red;
+    text-decoration: none;
+    color: white;
+    border-radius: 25px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 5px;
+    text-transform: uppercase;
+    box-shadow:0 1px 5px rgba(215, 210, 210, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .first{
     font-family: Gilroy,sans-serif;
@@ -32,17 +48,58 @@
 }
 .second{
     font-family: Gilroy,sans-serif;
-    height: 70vh;
+    height: 100%;
     position: relative;
     text-align: center;
+    background: linear-gradient(135deg, white, red);
 }
 .second p{
-    padding: 2%;
+    padding-top: 2%;
 }
 .second h1{
     font-size: 40px;
+    padding: 3%;
 }
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.card{
+    display: flex;
+    flex-direction: column;
+}
+.image{
+    height: 5%;
+    width: 16%;
+    flex: 0 50%;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+      0 5px 15px 0 rgba(37, 44, 97, 0.15);
+    border-radius: 15px;
+    margin: 10px;
+    padding: 15px 15px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    min-height: 250px;
+    transition: 0.7s;
+}
+.image:hover {
+    background: #fff;
+    color: #fff;
+    transform: scale(1.1);
+    z-index: 9;
+}
+.image:hover::before {
+    background: rgb(85 108 214 / 10%);
+  }
+/* .title{
+   font-size: 24px;
+} */
+.title{
+    color: #212121;
+    font-size: 1.3rem;
+    margin-top: 16px;
+    margin-bottom: 13px;
+  }
+
+.para{
+   font-size: 20px;
+   margin-bottom: 15px;
 }
